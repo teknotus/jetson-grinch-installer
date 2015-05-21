@@ -1,0 +1,21 @@
+diff -ur Linux_for_Tegra/bootloader/ardbeg/jetson-tk1_extlinux.conf.emmc Linux_for_Tegra.patched/bootloader/ardbeg/jetson-tk1_extlinux.conf.emmc
+--- Linux_for_Tegra/bootloader/ardbeg/jetson-tk1_extlinux.conf.emmc	2015-02-02 18:02:08.000000000 -0800
++++ Linux_for_Tegra.patched/bootloader/ardbeg/jetson-tk1_extlinux.conf.emmc	2015-05-19 19:29:37.508659163 -0700
+@@ -7,4 +7,4 @@
+       MENU LABEL primary kernel
+       LINUX /boot/zImage
+       FDT /boot/tegra124-jetson_tk1-pm375-000-c00-00.dtb
+-      APPEND console=ttyS0,115200n8 console=tty1 no_console_suspend=1 lp0_vec=2064@0xf46ff000 mem=2015M@2048M memtype=255 ddr_die=2048M@2048M section=256M pmuboard=0x0177:0x0000:0x02:0x43:0x00 tsec=32M@3913M otf_key=c75e5bb91eb3bd947560357b64422f85 usbcore.old_scheme_first=1 core_edp_mv=1150 core_edp_ma=4000 tegraid=40.1.1.0.0 debug_uartport=lsport,3 power_supply=Adapter audio_codec=rt5640 modem_id=0 android.kerneltype=normal fbcon=map:1 commchip_id=0 usb_port_owner_info=0 lane_owner_info=6 emc_max_dvfs=0 touch_id=0@0 board_info=0x0177:0x0000:0x02:0x43:0x00 root=/dev/mmcblk0p1 rw rootwait tegraboot=sdmmc gpt
++      APPEND console=ttyS0,115200n8 console=tty1 no_console_suspend=1 lp0_vec=2064@0xf46ff000 mem=2015M@2048M memtype=255 ddr_die=2048M@2048M section=256M pmuboard=0x0177:0x0000:0x02:0x43:0x00 tsec=32M@3913M otf_key=c75e5bb91eb3bd947560357b64422f85 usbcore.old_scheme_first=1 core_edp_mv=1150 core_edp_ma=4000 tegraid=40.1.1.0.0 debug_uartport=lsport,3 power_supply=Adapter audio_codec=rt5640 modem_id=0 android.kerneltype=normal fbcon=map:1 commchip_id=0 usb_port_owner_info=2 lane_owner_info=6 emc_max_dvfs=0 touch_id=0@0 board_info=0x0177:0x0000:0x02:0x43:0x00 root=/dev/mmcblk0p1 rw rootwait tegraboot=sdmmc gpt
+diff -ur Linux_for_Tegra/jetson-tk1.conf Linux_for_Tegra.patched/jetson-tk1.conf
+--- Linux_for_Tegra/jetson-tk1.conf	2015-02-02 18:02:08.000000000 -0800
++++ Linux_for_Tegra.patched/jetson-tk1.conf	2015-05-19 19:29:00.549125142 -0700
+@@ -35,7 +35,7 @@
+ ############################################################################
+ # ODMDATA for USB2.0 configuration on USB port(J1C2 connector) = 0x6009C000
+ # ODMDATA for USB3.0 configuration on USB port(J1C2 connector) = 0x6209C000
+-ODMDATA=0x6009C000;
++ODMDATA=0x6209C000;
+ BOOTPARTSIZE=8388608;
+ EMMCSIZE=15766388736;
+ ROOTFSSIZE=15032385536;
